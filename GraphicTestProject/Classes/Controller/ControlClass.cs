@@ -18,13 +18,18 @@ namespace GraphicTestProject.Classes.Controller
     {
         private FormGamePrimary gamingForm;
         private Settings settings;
+        private Player player;
         private FPS fps;
 
         //TODO: Configurationen  ==> werden Settings geändert müssen hier entsprechende anpassungen Vorgenommen werden 
-        //Aktuell ==> Configuration des FPS wird nur am Anfang berücksichtigt
-
+        //                       ==> Player durch XML Laden
+        //                       ==> Graphisches Object zu ende Implementieren
+        //                       ==> ID verwaltung Implementieren
+        
         //Kommentare
         //FPS ist Aktuell Fest verankert, nur die Sichtbarkeit kann an oder Ausgestellt werden
+        //Die Player Klasse wird so interpretriert das es ein Spezifischer Player ist, der Selbstständig sein Graphisches Object erzeugt
+
         public ControlClass(FormGamePrimary gamingForm)
         {
             this.gamingForm = gamingForm;
@@ -37,6 +42,7 @@ namespace GraphicTestProject.Classes.Controller
         {
             settings = new Settings();
 
+            setUpPlayer();
             setUpGraphicUpdate();
             setUpFPS();
         }
@@ -64,6 +70,13 @@ namespace GraphicTestProject.Classes.Controller
             fpsTimer.Interval = 1000;
             fpsTimer.Tick += new EventHandler(EventFPS);
             fpsTimer.Start();
+        }
+        private void setUpPlayer()
+        {
+            player = new Player_PlayerOne(1, "Player");
+            gamingForm.addPlayer = player.GObject;
+
+
         }
         //Reaktionen auf Signale    
         private void EventGraphicUpdate(object sender, EventArgs e)

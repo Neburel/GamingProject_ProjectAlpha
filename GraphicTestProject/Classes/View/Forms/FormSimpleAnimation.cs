@@ -51,8 +51,8 @@ namespace GraphicTestProject
             randomDirectionChangeTimerforRandomObject();
 
             // Datenobjekte initialisieren
-            player_obj = new Player(0, "Spieler");
-            writePlayerHp(player_obj.Hp);
+            player_obj = new Player_PlayerOne(0, "Spieler");
+            writePlayerHp(player_obj.HP);
         }
         private void FormSpimpleAnimation_Paint(object sender, PaintEventArgs e)
         {
@@ -88,7 +88,7 @@ namespace GraphicTestProject
         }
         private void loseHp()
         {
-            player_obj.Hp = player_obj.Hp - 1;
+            player_obj.HP = player_obj.HP - 1;
         }
 
         private void FormSimpleAnimation_Load(object sender, EventArgs e)
@@ -159,7 +159,7 @@ namespace GraphicTestProject
             {
                 fps.OnMapUpdated();
             }
-            writePlayerHp(player_obj.Hp);
+            writePlayerHp(player_obj.HP);
             this.Refresh();
         }
 

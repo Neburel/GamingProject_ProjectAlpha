@@ -40,7 +40,6 @@
             this.lblFPS.TabIndex = 0;
             this.lblFPS.Text = "lblFPS";
             this.lblFPS.Visible = false;
-            this.lblFPS.Click += new System.EventHandler(this.label1_Click);
             // 
             // FormGamePrimary
             // 
@@ -51,6 +50,8 @@
             this.Name = "FormGamePrimary";
             this.Text = "FormGamePrimary";
             this.Load += new System.EventHandler(this.FormGamePrimary_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormSpimpleAnimation_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGamePrimary_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

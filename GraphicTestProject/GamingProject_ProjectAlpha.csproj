@@ -68,8 +68,10 @@
   <ItemGroup>
     <Compile Include="Classes\Controller\ControlClass.cs" />
     <Compile Include="Classes\Controller\Settings.cs" />
+    <Compile Include="Classes\Controller\Settings_Keyboard.cs" />
     <Compile Include="Classes\Data\Entity.cs" />
     <Compile Include="Classes\Data\Item.cs" />
+    <Compile Include="Classes\Data\Player_PlayerOne.cs" />
     <Compile Include="Classes\Data\Player.cs" />
     <Compile Include="Classes\View\Forms\FormGamePrimary.cs">
       <SubType>Form</SubType>
@@ -77,6 +79,7 @@
     <Compile Include="Classes\View\Forms\FormGamePrimary.Designer.cs">
       <DependentUpon>FormGamePrimary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\View\GraphicObjects\GraphicObject.cs" />
     <Compile Include="Classes\View\GraphicObjects\GraphicObjectEllipse.cs" />
     <Compile Include="Classes\View\GraphicObjects\GraphicObjectRectangle.cs" />
     <Compile Include="Classes\View\GraphicObjects\GraphicObjects.cs" />
@@ -94,6 +97,7 @@
     </Compile>
     <Compile Include="Classes\Util\LoadGraphicObjectXML.cs" />
     <Compile Include="Classes\Util\Program.cs" />
+    <Compile Include="Classes\View\GraphicObjects\GraphicObject_Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Controller\FPS.cs" />
     <EmbeddedResource Include="Classes\View\Forms\FormGamePrimary.resx">
