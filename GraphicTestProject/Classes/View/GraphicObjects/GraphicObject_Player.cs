@@ -32,8 +32,8 @@ namespace GraphicTestProject.Classes.View.GraphicObjects
             color = Brushes.Black;
         }
 
-        public int pos_x { get => x; set => value = x; }
-        public int pos_y { get => y; set => value = y; }
+        public int pos_x { get => x; set => x = value; }
+        public int pos_y { get => y; set => y = value; }
 
         public void drawGraphicObject(Graphics g)
         {

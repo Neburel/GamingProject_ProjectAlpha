@@ -61,8 +61,8 @@ namespace GraphicTestProject.Classes.Controller
         /// </summary>
         private void setUpFPS()
         {
-            if(settings.FPS == true) { gamingForm.lblFPSVisible = true; }
-            if(settings.FPS == false) { gamingForm.lblFPSVisible = false; }
+            if(settings.FPSVisible == true) { gamingForm.lblFPSVisible = true; }
+            if(settings.FPSVisible == false) { gamingForm.lblFPSVisible = false; }
 
             fps = new FPS();
 

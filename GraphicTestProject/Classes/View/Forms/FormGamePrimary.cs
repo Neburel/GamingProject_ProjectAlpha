@@ -15,8 +15,11 @@ namespace GraphicTestProject.Classes.View.Forms
 {
     public partial class FormGamePrimary : Form
     {
-        internal GraphicObject_Player gObjectPlayer;
         internal List<GraphicObject> gObjects;                  //Enthält alle Graphischen Objecte (Auch den Player)
+        internal GraphicObject_Player gObjectPlayer;
+
+        private Settings_Keyboard keyboard;
+        private ControlClass controlClass;
 
         public FormGamePrimary()
         {
@@ -24,7 +27,9 @@ namespace GraphicTestProject.Classes.View.Forms
             InitializeComponent();     //Muss zuerst ausgeführt werden da sich aktionen auf die Komponenten beziehen
 
             gObjects = new List<GraphicObject>();
-            ControlClass controlClass = new ControlClass(this);     //Besser Als übergabeparameter?
+            controlClass = new ControlClass(this);     //Besser Als übergabeparameter?
+            keyboard = new Settings_Keyboard();
+            
             controlClass.setUp();
             this.Visible = true;
         }
@@ -44,7 +49,6 @@ namespace GraphicTestProject.Classes.View.Forms
         {
             foreach (GraphicObject gobject in gObjects)
             {
-                Console.WriteLine("hello");
                 gobject.drawGraphicObject(e.Graphics);
             }
         }
@@ -69,7 +73,26 @@ namespace GraphicTestProject.Classes.View.Forms
 
         private void FormGamePrimary_KeyDown(object sender, KeyEventArgs e)
         {
+            Console.WriteLine("KeyDown");
 
+            if (e.KeyData == keyboard.moveDown)
+            {
+                Console.WriteLine("Down");
+
+                gObjectPlayer.pos_y = gObjectPlayer.pos_y + 100;
+            }
+            else if (e.KeyData == keyboard.moveUp)
+            {
+                gObjectPlayer.pos_y = gObjectPlayer.pos_y - 100;
+            }
+            else if (e.KeyData == keyboard.moveLeft)
+            {
+                gObjectPlayer.pos_x = gObjectPlayer.pos_x - 100;
+            }
+            else if (e.KeyData == keyboard.moveRight)
+            {
+                gObjectPlayer.pos_x = gObjectPlayer.pos_x + 100;
+            }
         }
     }
 }
